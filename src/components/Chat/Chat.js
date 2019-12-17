@@ -15,6 +15,7 @@ export const Chat = observer(() => {
 
   useEffect(() => {
     chatStore.loadAllMessages()
+    chatStore.startPolling()
   }, [chatStore])
 
   useEffect(() => {

@@ -10,6 +10,12 @@ export class ChatApi {
       .then(messages => messages.map(this.transform))
   }
 
+  fetchNextMessages(timestamp, limit = 10) {
+    return fetch(`${this.url}?since=${timestamp}&limit=${limit}&token=${this.token}`)
+      .then(this.parseResponse)
+      .then(messages => messages.map(this.transform))
+  }
+
   sendMessage(author, message) {
     return fetch(this.url, {
       method: 'POST',
