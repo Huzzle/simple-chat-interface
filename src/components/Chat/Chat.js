@@ -21,6 +21,11 @@ export const Chat = observer(() => {
     chatRef.current.scrollTop = chatRef.current.scrollHeight
   }, [chatStore.messages.length])
 
+  function addMessage() {
+    chatStore.addMessage(me.name, message)
+    setMessage('')
+  }
+
   function renderMessages() {
     return chatStore.messages
       .map(({ id, author, text, timestamp }) => (
@@ -48,7 +53,7 @@ export const Chat = observer(() => {
           />
         </div>
         <div className="Chat__SendButton">
-          <Button onClick={() => {}} disabled={message === ''}>Send</Button>
+          <Button onClick={addMessage} disabled={message === ''}>Send</Button>
         </div>
       </div>
     </div>

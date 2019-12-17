@@ -10,6 +10,19 @@ export class ChatApi {
       .then(messages => messages.map(this.transform))
   }
 
+  sendMessage(author, message) {
+    return fetch(this.url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'token': this.token
+      },
+      body: JSON.stringify({ author, message })
+    })
+    .then(this.parseResponse)
+    .then(this.transform)
+  }
+
   transform({ _id, message, author, timestamp }) {
     return { id: _id, text: message, author, timestamp: Number(timestamp) }
   }

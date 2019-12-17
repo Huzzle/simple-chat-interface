@@ -13,6 +13,12 @@ export const ChatStore = types
     loadAllMessagesSuccess(messages) {
       self.messages = messages
     },
+    addMessage(author, message) {
+      getEnv(self).chatApi.sendMessage(author, message).then(self.addMessageSuccess)
+    },
+    addMessageSuccess(message) {
+      self.messages.push(message)
+    },
   }))
 
 export const createChatStore = () => {
