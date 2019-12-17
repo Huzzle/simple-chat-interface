@@ -9,7 +9,7 @@ import { Button } from '../../ui-kit/Button'
 import './Chat.css'
 
 export const Chat = observer(() => {
-  const { chatStore } = useStore()
+  const { chatStore, me } = useStore()
   const chatRef = useRef(null)
   const [ message, setMessage ] = useState('')
 
@@ -29,6 +29,7 @@ export const Chat = observer(() => {
           author={author}
           text={text}
           timestamp={timestamp}
+          currentUserName={me.name}
         />
       ))
   }

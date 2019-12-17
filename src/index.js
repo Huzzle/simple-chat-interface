@@ -10,6 +10,9 @@ import { Chat } from './components/Chat'
 import './index.css'
 
 const rootStore = RootStore.create({
+  me: {
+    name: process.env.REACT_APP_USER_NAME
+  },
   chatStore: createChatStore()
 }, {
   chatApi: new ChatApi(process.env.REACT_APP_API_URL, process.env.REACT_APP_TOKEN)

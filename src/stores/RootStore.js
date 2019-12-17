@@ -1,10 +1,12 @@
 import { createContext, useContext } from 'react'
 import { types } from 'mobx-state-tree'
 
+import { User } from '../core-entities'
 import { ChatStore } from './ChatStore'
 
 export const RootStore = types
   .model('RootStore', {
+    me: types.maybe(User),
     chatStore: ChatStore, 
   })
 

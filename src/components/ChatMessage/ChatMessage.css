@@ -7,6 +7,16 @@
   background-color: #fff;
 }
 
+.ChatMessage--mine {
+  align-self: flex-end;
+  background-color: #fbf7c9;
+  padding: 16px 8px 4px 16px;
+}
+
+.ChatMessage--mine .ChatMessage__DateTime {
+    text-align: right;
+  }
+
 .ChatMessage + .ChatMessage {
   margin-top: 16px;
 }
