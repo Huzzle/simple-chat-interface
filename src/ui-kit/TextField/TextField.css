@@ -1,0 +1,7 @@
+.TextField {
+  width: 100%;
+  outline: none;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
