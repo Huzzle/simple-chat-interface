@@ -12,5 +12,14 @@
 
 .Chat__Footer {
   flex: 0 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #2497ce;
+}
+
+.Chat__MessageInput {
+  flex-basis: 60%;
+  min-width: 150px;
+  margin: 0 8px;
 }
